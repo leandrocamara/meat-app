@@ -6,28 +6,32 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.router'
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { HeaderComponent } from './header/header.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component'
+
+import { RestaurantsService } from './restaurants/restaurants.service'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     AboutComponent,
-    RestaurantsComponent,
-    RestaurantComponent
+    HeaderComponent,
+    RestaurantComponent,
+    RestaurantsComponent
   ],
   imports: [
-    BrowserModule,
     HttpModule,
+    BrowserModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [
+    RestaurantsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
