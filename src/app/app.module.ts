@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component'
 import { AboutComponent } from './about/about.component'
 import { OrderComponent } from './order/order.component'
 import { HeaderComponent } from './header/header.component'
+import { InputComponent } from './shared/input/input.component'
 import { MenuComponent } from './restaurant-detail/menu/menu.component'
 import { RestaurantsComponent } from './restaurants/restaurants.component'
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
@@ -28,6 +29,8 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
     HomeComponent,
     MenuComponent,
     AboutComponent,
+    OrderComponent,
+    InputComponent,
     HeaderComponent,
     ReviewsComponent,
     MenuItemComponent,
@@ -35,7 +38,6 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
     RestaurantsComponent,
     ShoppingCartComponent,
     RestaurantDetailComponent,
-    OrderComponent
   ],
   imports: [
     HttpModule,
