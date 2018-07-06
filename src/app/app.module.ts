@@ -10,6 +10,7 @@ import { RestaurantsService } from './restaurants/restaurants.service'
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service'
 
 import { AppComponent } from './app.component'
+import { OrderService } from './order/order.service'
 import { HomeComponent } from './home/home.component'
 import { AboutComponent } from './about/about.component'
 import { OrderComponent } from './order/order.component'
@@ -18,11 +19,12 @@ import { InputComponent } from './shared/input/input.component'
 import { RadioComponent } from './shared/radio/radio.component'
 import { MenuComponent } from './restaurant-detail/menu/menu.component'
 import { RestaurantsComponent } from './restaurants/restaurants.component'
+import { OrderItemsComponent } from './order/order-items/order-items.component'
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component'
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component'
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component'
-import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component'
+import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
     ReviewsComponent,
     MenuItemComponent,
     RestaurantComponent,
+    OrderItemsComponent,
     RestaurantsComponent,
     ShoppingCartComponent,
     RestaurantDetailComponent,
@@ -48,6 +51,7 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
+    OrderService,
     RestaurantsService,
     ShoppingCartService,
     { provide: LOCALE_ID, useValue: 'pt-BR' }
