@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core'
 
 import { OrderService } from './order.service'
+import { Order, OrderItem } from './order.model'
 import { RadioOption } from '../shared/radio/radio-option.model'
 import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model'
 
@@ -42,6 +43,15 @@ export class OrderComponent implements OnInit {
 
   remove(item: CartItem) {
     this.orderService.remove(item)
+  }
+
+  checkOrder(order: Order) {
+    order.orderItems =  this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
+    this.orderService.checkOrder(order).subscribe((orderId: string) => {
+      console.log(`Compra concluída: ${orderId}`)
+      this.orderService.clear()
+    })
+    console.log(order)
   }
 
 }
